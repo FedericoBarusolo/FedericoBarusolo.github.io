@@ -186,6 +186,26 @@
         .usage-note strong {
             color: #667eea;
         }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
@@ -201,6 +221,19 @@
     <div class="features">
         <div class="container">
             <h2>Never Miss Another Event</h2>
+            
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/watch?v=C5LxxDjX6CQ" 
+                    title="Datemark Demo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
             <div class="feature-grid">
                 <div class="feature-card">
                     <h3>🤖 AI-Powered Detection</h3>
