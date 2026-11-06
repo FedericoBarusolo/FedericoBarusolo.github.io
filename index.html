@@ -45,13 +45,16 @@
 
         h1 {
             font-size: 48px;
-            margin-bottom: 20px;
+            line-height: 1.2;
+            margin: 0 auto 20px;
+            max-width: 820px;
             font-weight: 700;
         }
 
         .tagline {
-            font-size: 24px;
-            margin-bottom: 40px;
+            font-size: 22px;
+            margin: 0 auto 40px;
+            max-width: 700px;
             opacity: 0.95;
         }
 
@@ -157,6 +160,76 @@
             color: #666;
         }
 
+        .faq {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq details {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 16px;
+            padding: 0 24px;
+        }
+
+        .faq summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            color: #2d3748;
+            padding: 20px 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq summary::after {
+            content: "+";
+            color: #667eea;
+            font-size: 24px;
+            font-weight: 400;
+            flex-shrink: 0;
+        }
+
+        .faq details[open] summary::after {
+            content: "\2212";
+        }
+
+        .faq summary:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        .faq details p {
+            color: #666;
+            line-height: 1.7;
+            padding-bottom: 20px;
+        }
+
+        .faq details a {
+            color: #667eea;
+        }
+
         .footer {
             background: #2d3748;
             color: white;
@@ -203,16 +276,42 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: 0;
             border-radius: 12px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 34px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
         }
     </style>
 
     <meta name="description" content="Datemark is a free Chrome extension that uses AI to extract events from any webpage and add them to Google Calendar in one click.">
     <link rel="canonical" href="https://datemarkextension.com/">
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Datemark">
+    <meta property="og:title" content="Datemark - Add Events to Google Calendar from Any Webpage">
+    <meta property="og:description" content="Free Chrome extension that uses AI to extract events from any webpage and add them to Google Calendar in one click.">
+    <meta property="og:url" content="https://datemarkextension.com/">
+    <meta property="og:image" content="https://datemarkextension.com/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Datemark - Add Events to Google Calendar from Any Webpage">
+    <meta name="twitter:description" content="Free Chrome extension that uses AI to extract events from any webpage and add them to Google Calendar in one click.">
+    <meta name="twitter:image" content="https://datemarkextension.com/logo.png">
 
     <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@context": "https://schema.org",
           "@type": "SoftwareApplication",
           "name": "Datemark",
           "description": "Chrome extension that uses AI to extract event details from any webpage and add them to Google Calendar with one click.",
@@ -238,69 +337,125 @@
             "name": "Datemark",
             "url": "https://datemarkextension.com/"
           }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I add an event from a webpage to Google Calendar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Open the page with the event, click the Datemark icon in Chrome and choose \"Extract Events\". Datemark detects the title, date, time and location, you review the details, and then add the event to Google Calendar with one click."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Datemark free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The free tier includes 50 event extractions per month, and usage resets on the 1st of each month."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which websites does Datemark work on?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Datemark works on any webpage that contains event information, including concert sites, newsletters, conference pages, webinar announcements, meetup listings and class schedules."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I add multiple events at once?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. If a page lists several events, Datemark detects them all. You can select the ones you want and add them to your calendar together."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I edit event details before adding them?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Every detected event can be reviewed and edited before it is added, so you always stay in control of what goes into your calendar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Datemark safe to use with my Google account?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Datemark connects to Google Calendar through Google's OAuth authentication. You can read more about how data is handled in our Privacy Policy."
+              }
+            }
+          ]
         }
+      ]
+    }
     </script>
-    
+
 </head>
 <body>
-    <div class="hero">
+    <header class="hero">
         <div class="container">
             <div class="logo">
-                <img src="logo.png" alt="Datemark Logo">
+                <img src="logo.png" alt="Datemark - Chrome extension for Google Calendar" width="120" height="120">
             </div>
-            <h1>Datemark</h1>
-            <p class="tagline">Transform any webpage into calendar events with just a click</p>
+            <h1>Add Events to Google Calendar from Any Webpage</h1>
+            <p class="tagline">Datemark is a free Chrome extension that uses AI to find events on any page and add them to Google Calendar in one click.</p>
             <a href="https://chromewebstore.google.com/detail/datemark/aoldddfllaacoiihcnjhkhljoaoogabc" class="cta-button">Add to Chrome - It's Free</a>
         </div>
-    </div>
+    </header>
 
-    <div class="features">
+    <main>
+    <section class="features">
         <div class="container">
-            <h2>Never Miss Another Event</h2>
-            
+            <h2>Why Use Datemark to Add Events to Google Calendar</h2>
+
             <div class="video-container">
-                <iframe 
-                    width="560" 
-                    height="315" 
+                <iframe
+                    width="560"
+                    height="315"
                     src="https://www.youtube.com/embed/CEOefaZkKxY?si=s-3kMwhv7PTglBRB"
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
+                    title="Datemark demo: add events to Google Calendar in one click"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen>
                 </iframe>
             </div>
-            
+
             <div class="feature-grid">
                 <div class="feature-card">
-                    <h3>🤖 AI-Powered Detection</h3>
+                    <h3><span aria-hidden="true">🤖</span> AI-Powered Detection</h3>
                     <p>Automatically extracts event details including title, date, time, and location from any webpage using intelligent AI.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>✏️ Review & Edit</h3>
+                    <h3><span aria-hidden="true">✏️</span> Review &amp; Edit</h3>
                     <p>Check and modify event details before adding them to your calendar. You're always in control.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>⚡ Bulk Operations</h3>
+                    <h3><span aria-hidden="true">⚡</span> Bulk Operations</h3>
                     <p>Found multiple events? Select and add them all to your calendar at once with a single click.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>📅 Google Calendar Sync</h3>
+                    <h3><span aria-hidden="true">📅</span> Google Calendar Sync</h3>
                     <p>Seamlessly integrates with Google Calendar for instant event insertion.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🔒 Secure & Private</h3>
+                    <h3><span aria-hidden="true">🔒</span> Secure &amp; Private</h3>
                     <p>OAuth-based authentication ensures your data stays safe and secure.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🎯 Works Everywhere</h3>
+                    <h3><span aria-hidden="true">🎯</span> Works Everywhere</h3>
                     <p>Concert sites, newsletters, conference pages, meetup announcements - Datemark works on any webpage.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="how-it-works">
+    <section class="how-it-works">
         <div class="container">
             <h2>How It Works</h2>
             <div class="steps">
@@ -338,18 +493,60 @@
                 <strong>Free Tier:</strong> 50 event extractions per month. Usage resets on the 1st of each month.
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="footer">
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>How do I add an event from a webpage to Google Calendar?</summary>
+                    <p>Open the page with the event, click the Datemark icon in Chrome and choose "Extract Events". Datemark detects the title, date, time and location, you review the details, and then add the event to Google Calendar with one click.</p>
+                </details>
+
+                <details>
+                    <summary>Is Datemark free?</summary>
+                    <p>Yes. The free tier includes 50 event extractions per month, and usage resets on the 1st of each month.</p>
+                </details>
+
+                <details>
+                    <summary>Which websites does Datemark work on?</summary>
+                    <p>Datemark works on any webpage that contains event information, including concert sites, newsletters, conference pages, webinar announcements, meetup listings and class schedules.</p>
+                </details>
+
+                <details>
+                    <summary>Can I add multiple events at once?</summary>
+                    <p>Yes. If a page lists several events, Datemark detects them all. You can select the ones you want and add them to your calendar together.</p>
+                </details>
+
+                <details>
+                    <summary>Can I edit event details before adding them?</summary>
+                    <p>Yes. Every detected event can be reviewed and edited before it is added, so you always stay in control of what goes into your calendar.</p>
+                </details>
+
+                <details>
+                    <summary>Is Datemark safe to use with my Google account?</summary>
+                    <p>Datemark connects to Google Calendar through Google's OAuth authentication. You can read more about how data is handled in our <a href="https://datemarkextension.com/privacy_policy">Privacy Policy</a>.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
         <div class="container">
             <p style="margin-bottom: 15px;">Made with care for everyone who's tired of manually adding events to their calendar</p>
             <p>
-                <a href="https://github.com/FedericoBarusolo/datemark/tree/main" target="_blank">GitHub</a> | 
-                <a href="mailto:infodatemark@gmail.com">Contact</a> | 
-                <a href="https://datemarkextension.com/privacy_policy" target="_blank">Privacy Policy</a>
+                <a href="https://github.com/FedericoBarusolo/datemark/tree/main" target="_blank" rel="noopener">GitHub</a> |
+                <a href="mailto:infodatemark@gmail.com">Contact</a> |
+                <a href="https://datemarkextension.com/privacy_policy" target="_blank" rel="noopener">Privacy Policy</a>
             </p>
-            <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">© 2025 Datemark. All rights reserved.</p>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">&copy; <span id="year">2026</span> Datemark. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
